@@ -2,9 +2,13 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
 import NewSongItem from "./Components/NewSongItem/NewSongItem";
+import Header from "./Components/Header/Header";
+import MusicTable from "./Components/MusicTable/MusicTable";
+import SearchBar from "./Components/SearchBar/SearchBar";
 
 function App() {
   const [songs, setSongs] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
 
   const fetchSongs = async () => {
     try {
@@ -27,8 +31,13 @@ function App() {
 
   return (
     <div className="App">
-      {/* Header */}
-      {/*  */}
+      <Header />
+      <SearchBar
+        songs={songs}
+        searchInput={searchInput}
+        setSearchInput={setSearchInput}
+      />
+      <MusicTable songs={songs} searchInput={searchInput} />
       <NewSongItem onNewSong={handleNewSong} />
     </div>
   );
