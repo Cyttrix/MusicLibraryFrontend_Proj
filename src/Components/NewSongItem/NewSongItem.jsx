@@ -20,6 +20,7 @@ const NewSongItem = ({onNewSong}) => {
     }
     
     return ( 
+    <div>
        <form onSubmit={handleSubmit}>
         <h4>
             Add New Song
@@ -44,10 +45,10 @@ const NewSongItem = ({onNewSong}) => {
             <label>Genre</label>
             <textarea value={genre} onChange={(e) => setGenre(e.target.value)}/>
         </div>
-        <button type="submit">Add Song</button>
+        <button type="submit" class="btn btn-outline-primary">Add Song</button>
         
        </form>
-
+       </div>
 
         
      );

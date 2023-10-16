@@ -10,7 +10,8 @@ const handleChange = (e) => {
 
 
 return (
-<input type="text"
+<input 
+type="text"
 placeholder="Search here"
 onChange={handleChange}
 value={searchInput} />

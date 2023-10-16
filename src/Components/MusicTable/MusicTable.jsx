@@ -11,17 +11,22 @@ const MusicTable = ({songs = [], searchInput }) => {
         });
     
         console.log(searchFilter);
-    const songItem = searchFilter.map((song, index) => <tr key={index}><td>{song.title}</td><td>{song.artist}</td>
-    <td>{song.album}</td><td>{song.releaseDate}</td><td>{song.genre}</td><td><button>Edit</button><button>Delete</button></td></tr>)
+    const songItem = searchFilter.map((song, index) => <tr key={index}>
+        <td>{song.title}</td><td>{song.artist}</td>
+        <td>{song.album}</td><td>{song.releaseDate}</td><td>{song.genre}</td>
+        <td><button class ="btn btn-outline-warning">Edit</button></td>
+        <td><button class="btn btn-outline-danger">Delete</button></td></tr>)
 
     return (
-        <table>
+        <table class="table table-bordered border-info">
             <tr>
                 <th>Title</th>
                 <th>Artist</th>
                 <th>Album</th>
                 <th>Release Date</th>
                 <th>Genre</th>
+                <th>Edit</th>
+                <th>Delete</th>
             </tr>
             {songItem}
         </table>

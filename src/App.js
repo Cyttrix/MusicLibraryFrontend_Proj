@@ -30,15 +30,17 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div>
       <Header />
-      <SearchBar
-        songs={songs}
-        searchInput={searchInput}
-        setSearchInput={setSearchInput}
-      />
-      <MusicTable songs={songs} searchInput={searchInput} />
-      <NewSongItem onNewSong={handleNewSong} />
+      <div className="verticalalignmiddle">
+        <SearchBar
+          songs={songs}
+          searchInput={searchInput}
+          setSearchInput={setSearchInput}
+        />
+        <MusicTable songs={songs} searchInput={searchInput} />
+        <NewSongItem onNewSong={handleNewSong} />
+      </div>
     </div>
   );
 }
